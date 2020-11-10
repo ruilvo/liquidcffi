@@ -38,7 +38,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+lib/**
 lib64/
 parts/
 sdist/
@@ -166,3 +166,6 @@ dmypy.json
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/code,python,visualstudiocode,jupyternotebooks
+
+!liquidcffi/lib/win64/libliquid.dll
+!liquidcffi/lib/win64/libliquid.lib
