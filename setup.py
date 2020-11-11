@@ -29,5 +29,5 @@ setup(
     cffi_modules=[
         "./liquidcffi/build_liquidcffi.py:ffibuilder",
     ],
-    data_files=[('', ["liquidcffi/lib/win64/libliquid.dll"])],
+    data_files=[("", ["liquidcffi/lib/win64/libliquid.dll"])],
 )

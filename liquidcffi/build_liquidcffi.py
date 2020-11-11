@@ -15,17 +15,19 @@ curr_dir = os.path.abspath(os.path.dirname(__file__))
 ffibuilder = FFI()
 
 ffibuilder.set_source(
-    "liquidcffi",
+    "liquidcffi._liquidcffi",
     r"""
         #include "liquid.pre.nc.h"
     """,
     libraries=["libliquid"],
     library_dirs=[os.path.normpath(os.path.join(curr_dir, "lib/win64/"))],
     include_dirs=[os.path.normpath(os.path.join(curr_dir, "include/"))],
-    #extra_objects=[]
+    # extra_objects=[]
 )
 
-ffibuilder.cdef(open(os.path.normpath(os.path.join(curr_dir, "include/liquid.pre.nc.h"))).read())
+ffibuilder.cdef(
+    open(os.path.normpath(os.path.join(curr_dir, "include/liquid.pre.nc.h"))).read()
+)
 
 if __name__ == "__main__":
     ffibuilder.compile(verbose=True)
